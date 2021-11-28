@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="{StaticResource AppBackgroundColor}"
+             Title="{Binding model.Title}"
+             x:Class="ProductApp.Views.ProductDetails">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="RTL" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content >
+        <Grid>
+            <ScrollView>
+        <StackLayout Spacing="10">
+            <Image Aspect="AspectFit" BackgroundColor="White" HeightRequest="350" Source="{Binding model.Image}"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.Column="0">
+                    <Label Text="{Binding model.Title}" TextColor="{StaticResource WhiteTextColor}" FontSize="Large" FontAttributes="Bold" Margin="{StaticResource ContentHorizontalPadding}"/>
+                    <Label Text="By Adidas" TextColor="{StaticResource ListTextColor}" FontSize="Small" Margin="{StaticResource ContentHorizontalPadding}"/>
+                        </StackLayout>
+                        <Label Text="{Binding model.Price, StringFormat='${0}'}" TextColor="White" VerticalTextAlignment="Center" FontSize="27" Grid.Column="1" Margin="{StaticResource ContentHorizontalPadding}"/>
+                    </Grid>
+                    <Label Text="{Binding model.Description}" TextColor="{StaticResource WhiteTextColor}" FontSize="Subtitle" Margin="{StaticResource ContentHorizontalPadding}" />
+                    <BoxView BackgroundColor="Gray" HeightRequest="2" WidthRequest="50" HorizontalOptions="Start" Margin="{StaticResource ContentHorizontalPadding}"/>
+        </StackLayout>
+            </ScrollView>
+            <Button BackgroundColor="{StaticResource AccentColor}" Text="{Binding CartStatusText}"  TextColor="White" CornerRadius="5" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Margin="15" Command="{Binding AddtoCartCommand}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

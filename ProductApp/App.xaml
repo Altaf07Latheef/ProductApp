@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             x:Class="ProductApp.App">
+  <Application.Resources>
+
+    <!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <Color x:Key="AppBackgroundColor">#45455c</Color>
+            <Color x:Key="ListTextColor">#7f92b8</Color>
+            <Color x:Key="WhiteTextColor">#ffffff</Color>
+            <Color x:Key="AccentColor">#292939</Color>
+
+            <Thickness x:Key="ContentHorizontalPadding">15,0</Thickness>
+        </ResourceDictionary>
+
+  </Application.Resources>
+</prism:PrismApplication>
